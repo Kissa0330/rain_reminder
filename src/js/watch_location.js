@@ -1,4 +1,4 @@
-import get_weather from "./get_weather.js";
+import get_weather from "./get_weather_by_meteo.js";
 
 // リアルタイムで位置情報を取得
 let syncerWatchPosition = {
