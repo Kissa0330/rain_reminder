@@ -6,7 +6,7 @@ let syncerWatchPosition = {
   lastTime: 0, // 前回の処理
 };
 
-let optionObj = {
+const optionObj = {
   enableHighAccuracy: true,
   timeout: 100000000000,
   maximumAge: 0,
@@ -39,7 +39,7 @@ function successFunc(position) {
 
 // 位置情報の取得に失敗したとき
 function errorFunc(error) {
-  let errorMessage = {
+  const errorMessage = {
     0: "原因不明のエラーが発生しました",
     1: "位置情報の取得が許可されませんでした",
     2: "電波状況などで位置情報が取得できませんでした",
