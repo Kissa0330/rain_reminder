@@ -1,4 +1,4 @@
-import get_weather from "./get_weather_by_meteo.js";
+import get_weather from "./get_weather.js";
 
 // リアルタイムで位置情報を取得
 let syncerWatchPosition = {
@@ -13,9 +13,9 @@ let optionObj = {
 };
 
 let result = {
-    latitude: null,
-    longitude: null,
-    speed: null
+  latitude: null,
+  longitude: null,
+  speed: null,
 };
 
 // 位置情報の取得に成功したとき
@@ -25,8 +25,7 @@ function successFunc(position) {
   let nowTime = ~~(new Date() / 1000); // UNIX Timestamp
 
   // 前回の書き出しから3秒以上経過していたら描写
-  if (syncerWatchPosition.lastTime + 3 > nowTime)
-    return false;
+  if (syncerWatchPosition.lastTime + 3 > nowTime) return false;
 
   //緯度
   result.latitude = position.coords.latitude;
@@ -36,8 +35,6 @@ function successFunc(position) {
   result.speed = position.coords.speed;
 
   get_weather(result.latitude,result.longitude);
-  
-
 }
 
 // 位置情報の取得に失敗したとき
@@ -51,5 +48,9 @@ function errorFunc(error) {
 
   console.error(errorMessage[error.code]);
 }
+function watch_location() {
+  console.log("位置情報を取得しています");
+  navigator.geolocation.watchPosition(successFunc, errorFunc, optionObj);
+}
 
-navigator.geolocation.watchPosition(successFunc, errorFunc, optionObj);
+export default watch_location;
