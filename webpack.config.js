@@ -12,7 +12,6 @@ const main = {
     filename: "[name].js",
   },
   target: "web",
-  devtool: "source-map",
   module: {
     rules: [
       {

@@ -6,8 +6,8 @@
   "author": "raika takano",
   "license": "ISC",
   "scripts": {
-    "product": "rm -rf dist && webpack --mode production",
-    "build": "rm -rf dist && webpack --mode development",
+    "build-prod": "rm -rf dist && webpack --mode production",
+    "build-dev": "rm -rf dist && webpack --mode development",
     "start": "node ./dist/server.js"
   },
   "dependencies": {
