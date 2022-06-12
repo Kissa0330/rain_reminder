@@ -1,24 +1,30 @@
-
-const request = require("request");
-
+// open-meteoから1時間ごとの降水量を取得する
 function get_weather(latitude, longitude) {
-  const URL = "https://map.yahooapis.jp/weather/V1/place?";
-  const coordinates = "coordinates=" + latitude + "," + longitude;
-  const output_type = "&output=json";
-  const api_key =
-    "&appid=dj00aiZpPWd6R1lqejFjYTBFQiZzPWNvbnN1bWVyc2VjcmV0Jng9ZTg-";
-  const uri = URL + coordinates + output_type + api_key;
-  let res;
+    // 現在時刻のオブジェクト
+    const now = new Date();
+    // UTCに変換したときの〇時を取得
+    const hour = now.getUTCHours();
+    // open-meteo apiのurl
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=precipitation`;
+    // urlからデータを取得
+    fetch(url).then(data => data.json()).then(json => displayInfo(json, hour));
+} 
 
-  request.get(
-    {
-      uri: uri,
-    },
-    function (err, req, data) {
-      console.log(JSON.parse(data));
+// 取得した降水量に応じて描画する
+function displayInfo(json, hour) {
+    // 要素の取得
+    const notice = document.getElementById("notice");
+    const weather1 = document.getElementById("weather1");
+    const weather2 = document.getElementById("weather2");
+    // jsonから現在の降水量と1時間後の降水量を取得
+    const precipitation0 = json.hourly.precipitation[hour];
+    const precipitation1 = json.hourly.precipitation[hour+1];
+    // 現在の降水量または1時間後の降水量が0以上のとき
+    if(precipitation0 > 0 || precipitation1 > 0){
+        notice.innerHTML = "傘が必要です！！";
     }
-  );
-  return res;
+    weather1.innerHTML = "現在の降水量: " + precipitation0 + " mm";
+    weather2.innerHTML = "1時間後の降水量: "+ precipitation1 + " mm";
 }
-module.export(get_weather);
 
+export default get_weather;
