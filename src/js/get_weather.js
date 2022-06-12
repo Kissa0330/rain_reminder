@@ -1,4 +1,5 @@
-import request from"request";
+
+const request = require("request");
 
 function get_weather(latitude, longitude) {
   const URL = "https://map.yahooapis.jp/weather/V1/place?";
@@ -14,10 +15,10 @@ function get_weather(latitude, longitude) {
       uri: uri,
     },
     function (err, req, data) {
-      res = JSON.parse(data);
+      console.log(JSON.parse(data));
     }
   );
-  console.log(res);
   return res;
 }
-export {get_weather};
+module.export(get_weather);
+
