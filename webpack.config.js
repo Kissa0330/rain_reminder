@@ -4,7 +4,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const nodeExternals = require('webpack-node-externals');
 const main = {
   entry: {
-    main: "./src/js/index.js",
+    main: "./src/index.js",
   },
   output: {
     path: path.join(__dirname, "dist"),
@@ -27,6 +27,10 @@ const main = {
             //options: { minimize: true }
           },
         ],
+      },
+      {
+        test: /\.css$/,
+        use: [ 'style-loader', 'css-loader' ]
       },
     ],
   },
