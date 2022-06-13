@@ -1,6 +1,8 @@
-import './css/styles.css'
-import watch_location from "./js/watch_location"
-import get_mailaddress from "./js/get_mailaddress"
+import "./css/styles.css";
+import watch_location from "./js/watch_location";
+import register_mailaddress from "./js/register_mailaddress";
 
 watch_location();
-get_mailaddress();
+let button = document.getElementById("mail_button");
+console.log(button);
+button.addEventListener("click", register_mailaddress);
