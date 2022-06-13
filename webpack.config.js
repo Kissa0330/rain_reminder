@@ -31,11 +31,16 @@ const main = {
         test: /\.css$/,
         use: [ 'style-loader', 'css-loader' ]
       },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: ['file-loader']
+       }
     ],
   },
   plugins: [
     new HtmlWebPackPlugin({
       template: "./src/public/index.html",
+      favicon: './src/public/favicon.ico',
       filename: "./index.html",
       excludeChunks: ["server"],
     }),
