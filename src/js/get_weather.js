@@ -1,4 +1,4 @@
-import send_mail from "./send_mail";
+import request_mail from "./request_mail";
 // open-meteoから1時間ごとの降水量を取得する
 function get_weather(latitude, longitude) {
   // 現在時刻のオブジェクト
@@ -15,7 +15,7 @@ function get_weather(latitude, longitude) {
 
 // 取得した降水量に応じて描画する
 function displayInfo(json, hour) {
-  send_mail();
+  request_mail();
   // 要素の取得
   const notice = document.getElementById("notice");
   const weather1 = document.getElementById("weather1");

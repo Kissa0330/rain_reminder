@@ -49,7 +49,7 @@ const main = {
 
 const server = {
   entry: {
-    server: './src/server.js',
+    server: './src/server/server.js',
   },
   output: {
     path: path.join(__dirname, 'dist'),
