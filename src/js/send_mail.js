@@ -1,3 +1,5 @@
+import Email from "./smtp"
+
 function send_mail()
 {
 	Email.send({

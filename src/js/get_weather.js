@@ -15,7 +15,7 @@ function get_weather(latitude, longitude) {
 
 // 取得した降水量に応じて描画する
 function displayInfo(json, hour) {
-//   send_mail();
+  send_mail();
   // 要素の取得
   const notice = document.getElementById("notice");
   const weather1 = document.getElementById("weather1");
