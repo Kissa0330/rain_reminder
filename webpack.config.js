@@ -7,7 +7,7 @@ const main = {
     main: "./src/index.js",
   },
   output: {
-    path: path.join(__dirname, "functions/dist"),
+    path: path.join(__dirname, "dist"),
     publicPath: "/",
     filename: "[name].js",
   },
@@ -47,7 +47,7 @@ const server = {
     server: './src/server/server.js',
   },
   output: {
-    path: path.join(__dirname, 'functions/dist'),
+    path: path.join(__dirname, 'dist'),
     publicPath: '/',
     filename: '[name].js'
   },

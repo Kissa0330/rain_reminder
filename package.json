@@ -5,6 +5,7 @@
   "main": "server.js",
   "author": "raika takano",
   "license": "ISC",
+  "engines": {"node": "8"},
   "scripts": {
     "build-prod": "rm -rf functions/dist && webpack --mode production",
     "build-dev": "rm -rf functions/dist && webpack --mode development",
