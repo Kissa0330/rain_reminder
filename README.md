@@ -1,6 +1,6 @@
 # rain_reminder
 ## 概要
-このWebappはあなたの位置情報から外出を検知します。そしてもし傘が必要なら通知を出します！
+このWebappはあなたの位置情報から外出を検知します。そしてもし傘が必要なら通知を送ります！
 
 url:https://rain-reminder-by-kindai.herokuapp.com/
 
