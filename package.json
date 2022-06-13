@@ -7,8 +7,8 @@
   "license": "ISC",
   "engines": {"node": "8"},
   "scripts": {
-    "build-prod": "rm -rf functions/dist && webpack --mode production",
-    "build-dev": "rm -rf functions/dist && webpack --mode development",
+    "build-prod": "rm -rf dist && webpack --mode production",
+    "build-dev": "rm -rf dist && webpack --mode development",
     "start": "node ./dist/server.js"
   },
   "dependencies": {

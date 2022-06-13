@@ -35,7 +35,7 @@ const main = {
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: "./src/html/index.html",
+      template: "./src/public/index.html",
       filename: "./index.html",
       excludeChunks: ["server"],
     }),
@@ -44,7 +44,7 @@ const main = {
 
 const server = {
   entry: {
-    server: './src/server/server.js',
+    server: './src/server.js',
   },
   output: {
     path: path.join(__dirname, 'dist'),
