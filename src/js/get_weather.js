@@ -1,4 +1,4 @@
-import request_mail from "./request_mail";
+import send_email from "./send_email";
 import { stop } from "./watch_location";
 
 // open-meteoから1時間ごとの降水量を取得する
@@ -17,7 +17,6 @@ function get_weather(latitude, longitude) {
 
 // 取得した降水量に応じて描画する
 function displayInfo(json, hour) {
-  request_mail();
   // 要素の取得
   const notice = document.getElementById("notice");
   const weather1 = document.getElementById("weather1");
@@ -29,6 +28,7 @@ function displayInfo(json, hour) {
   // 現在の降水量または1時間後の降水量が0以上のとき
   if (precipitation0 > 0 || precipitation1 > 0) {
     notice.innerHTML = "傘が必要です！！";
+    send_email();
     stop(); // 位置情報の追跡を停止
   }
   weather1.innerHTML = "現在の降水量: " + precipitation0 + " mm";
