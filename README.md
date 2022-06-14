@@ -11,7 +11,7 @@ url:https://rain-reminder-by-kindai.herokuapp.com/
 
 `npm start`
 
-上記のファイルでビルド後に`npm start`を実行することで、`localhost:3000`にアプリが公開されます。
+ビルド後に`npm start`を実行することで、`localhost:3000`にアプリが公開されます。
 
 ## 開発者
 [Kissa0330](https://github.com/Kissa0330)
