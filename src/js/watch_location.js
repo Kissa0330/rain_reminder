@@ -1,5 +1,6 @@
 import get_weather from "./get_weather.js";
 
+var watchID;
 // リアルタイムで位置情報を取得
 let syncerWatchPosition = {
   count: 0, // 処理回数
@@ -50,7 +51,13 @@ function errorFunc(error) {
 }
 function watch_location() {
   console.log("位置情報を取得しています");
-  navigator.geolocation.watchPosition(successFunc, errorFunc, optionObj);
+  watchID = navigator.geolocation.watchPosition(successFunc, errorFunc, optionObj);
+}
+
+// 位置情報の追跡を中止する
+export function stop() {
+  navigator.geolocation.clearWatch(watchID);
+  console.log("位置情報の追跡を中止しました");
 }
 
 export default watch_location;
