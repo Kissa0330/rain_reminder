@@ -1,7 +1,7 @@
 body {
     font-family: sans-serif;
     background-color: rgb(241, 245, 247);
-    margin: 0;
+    text-align: center;
 }
   
 header {
@@ -19,20 +19,15 @@ header {
     color: rgb(75, 73, 73);
 }
 
-.noticeWrapper {
-    border-radius: 5px;
-    margin: 40px;
+.wrapper {
+    width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 40px;
+    display: flex;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: white;
     flex-direction: column;
-}
-
-.disc {
-    margin: 40px;
-}
-
-.discMes {
-    text-align: center;
 }
