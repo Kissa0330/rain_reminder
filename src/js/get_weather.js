@@ -27,10 +27,10 @@ function displayInfo(json, hour) {
   const precipitation1 = json.hourly.precipitation[hour + 1];
   // 現在の降水量または1時間後の降水量が0以上のとき
   if (precipitation0 > 0 || precipitation1 > 0) {
+    stop(); // 位置情報の追跡を停止
     notice.innerHTML = "現在傘が必要です！";
     alert("雨が降りそうです！\nお出かけするなら傘を持って行きましょう！")
     send_email();
-    stop(); // 位置情報の追跡を停止
   }
   weather1.innerHTML = "現在の降水量: " + precipitation0 + " mm";
   weather2.innerHTML = "1時間後の降水量: " + precipitation1 + " mm";
