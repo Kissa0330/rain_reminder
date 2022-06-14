@@ -28,6 +28,7 @@ function displayInfo(json, hour) {
   // 現在の降水量または1時間後の降水量が0以上のとき
   if (precipitation0 > 0 || precipitation1 > 0) {
     notice.innerHTML = "現在傘が必要です！";
+    alert("雨が降りそうです！\nお出かけするなら傘を持って行きましょう！")
     send_email();
     stop(); // 位置情報の追跡を停止
   }

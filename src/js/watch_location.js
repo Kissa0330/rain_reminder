@@ -35,7 +35,10 @@ function successFunc(position) {
   //速度
   result.speed = position.coords.speed;
 
-  if(result.speed >= 0.1)get_weather(result.latitude,result.longitude);
+  if(result.speed >= 0.8)
+  {
+    get_weather(result.latitude,result.longitude)
+  };
 }
 
 // 位置情報の取得に失敗したとき
