@@ -1,3 +1,8 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
 body {
   color: rgb(35, 35, 35);
   font-family: sans-serif;
@@ -38,7 +43,6 @@ header {
   margin-left: auto;
   margin-top: 30px;
   display: flex;
-  display: flex;
   align-items: center;
   justify-content: center;
   background-color: white;
@@ -52,4 +56,17 @@ input {
 }
 .inputButton {
   margin-bottom: 20px;
+}
+.wrapperBot
+{
+    margin-bottom: 20px;
+}
+@media screen and (max-width: 500px) {
+  .wrapper {
+    width: 330px;
+  }
+  p
+  {
+      font-size: 12px;
+  }
 }
