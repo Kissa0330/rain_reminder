@@ -9,13 +9,13 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/server.js":
-/*!***********************!*\
-  !*** ./src/server.js ***!
-  \***********************/
+/***/ "./src/server/server.js":
+/*!******************************!*\
+  !*** ./src/server/server.js ***!
+  \******************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const path = __webpack_require__(/*! path */ \"path\");\nconst express = __webpack_require__(/*! express */ \"express\");\n\nconst app = express(),\n            DIST_DIR = __dirname,\n            HTML_FILE = path.join(DIST_DIR, 'index.html')\napp.use(express.static(DIST_DIR));\n\napp.get(\"/\", (req, res) => {\n  res.sendFile(HTML_FILE);\n});\n\nconst port=process.env.PORT || 3000;\napp.listen(port, () => {\n  console.log(`app listening on port ${port}`);\n});\n\n\n//# sourceURL=webpack://rain_reminder/./src/server.js?");
+eval("const path = __webpack_require__(/*! path */ \"path\");\r\nconst express = __webpack_require__(/*! express */ \"express\");\r\n\r\nconst app = express(),\r\n            DIST_DIR = __dirname,\r\n            HTML_FILE = path.join(DIST_DIR, 'index.html')\r\napp.use(express.static(DIST_DIR));\r\n\r\napp.get(\"/\", (req, res) => {\r\n  res.sendFile(HTML_FILE);\r\n});\r\n\r\nconst port=process.env.PORT || 3000;\r\napp.listen(port, () => {\r\n  console.log(`app listening on port ${port}`);\r\n});\r\n\n\n//# sourceURL=webpack://rain_reminder/./src/server/server.js?");
 
 /***/ }),
 
@@ -72,7 +72,7 @@ module.exports = require("path");
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/server.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/server/server.js");
 /******/ 	
 /******/ })()
 ;
