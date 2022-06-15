@@ -9,9 +9,7 @@ url:https://rain-reminder-by-kindai.herokuapp.com/
 
 〇〇には`prod`か`dev`が入り、`prod`なら本番環境用にビルドされ、`dev`なら開発用にビルドされます。
 
-`npm start`
-
-ビルド後に`npm start`を実行することで、`localhost:3000`にアプリが公開されます。
+開発用にビルドした場合`http://localhost:8080/`にアプリがホットリロードで公開されます
 
 ## 開発者
 [Kissa0330](https://github.com/Kissa0330)
